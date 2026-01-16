@@ -16,8 +16,7 @@ This landing page promotes various senior discount programs and benefits, includ
 
 ```
 listicle-optimizer/
-├── index.html          # Main HTML file (refactored and formatted)
-├── styles.css          # All CSS styles (consolidated and organized)
+├── index.html          # Main HTML file (refactored with inline styles)
 ├── original.html       # Original unmodified HTML (backup)
 └── README.md          # This file
 ```
@@ -37,14 +36,14 @@ listicle-optimizer/
 
 ### 2. Code Organization
 
-- **Separated CSS**: Extracted all inline styles into `styles.css`
-- **Formatted HTML**: Added proper indentation and line breaks
-- **Added Comments**: Included section headers and explanatory comments
+- **Inline CSS Preserved**: All styles remain inline for single-file portability
+- **Semantic Naming**: Replaced obfuscated class names throughout
 - **DOCTYPE Added**: Ensured proper HTML5 doctype declaration
+- **Structure Maintained**: Preserved original HTML/CSS structure for compatibility
 
 ### 3. CSS Structure
 
-The CSS is now organized into logical sections:
+The CSS remains inline and organized into logical sections:
 
 1. **Responsive Scaling System** - Media queries for viewport-based scaling
 2. **Component Utility Classes** - Background, border, and color utilities
@@ -106,17 +105,18 @@ Test the page at these common breakpoints:
 ## Notes
 
 - The original file (`original.html`) is preserved for reference
-- All styles have been consolidated into `styles.css` for easier maintenance
-- The HTML structure has been formatted for readability
-- Comments have been added to explain major sections
-- Semantic class names replace obfuscated ones where possible
+- All styles remain inline within `index.html` for single-file portability
+- Semantic class names replace obfuscated ones throughout the code
+- Original CSS structure preserved to maintain exact layout and behavior
+- DOCTYPE declaration added for HTML5 compliance
 
 ## Future Improvements
 
 Potential enhancements for better maintainability:
+- Extract CSS to external stylesheet for easier maintenance
 - Convert fixed pixel values to relative units (rem, em)
 - Simplify the media query system using modern CSS (CSS Grid, Flexbox)
-- Extract JavaScript to separate file (if any)
+- Add proper formatting and indentation to HTML
 - Optimize image loading with lazy loading
 - Add CSS custom properties for theme colors
 - Use modern responsive techniques instead of CSS transforms
