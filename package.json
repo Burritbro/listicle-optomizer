@@ -1,0 +1,19 @@
+{
+  "name": "listicle-optimizer",
+  "version": "1.0.0",
+  "description": "Senior Listicle Leadgen Landing Page",
+  "scripts": {
+    "deploy": "wrangler pages deploy . --project-name=listicle-optimizer",
+    "dev": "wrangler pages dev .",
+    "preview": "wrangler pages dev . --port 8788"
+  },
+  "devDependencies": {
+    "wrangler": "^4.61.0"
+  },
+  "keywords": [
+    "landing-page",
+    "cloudflare-pages"
+  ],
+  "license": "UNLICENSED",
+  "private": true
+}

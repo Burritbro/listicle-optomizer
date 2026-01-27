@@ -1,0 +1,12 @@
+# Cloudflare Pages configuration
+name = "listicle-optimizer"
+compatibility_date = "2024-01-01"
+
+# Pages configuration
+pages_build_output_dir = "."
+
+# Optional: Add custom headers or redirects
+# [[headers]]
+# for = "/*"
+# [headers.values]
+# X-Frame-Options = "DENY"
