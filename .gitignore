@@ -1,0 +1,6 @@
+# Never commit credentials or FunnelFlux revenue data: this repo is public
+.env
+*.env
+analysis/ff_offers.csv
+analysis/ff_raw*.json
+analysis/report.md
