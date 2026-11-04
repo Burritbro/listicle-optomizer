@@ -1,79 +1,79 @@
-page_position,ff_action,product,network,known_payout_usd,dfo_cpa_usd,routed_via_dfo
-1,2,MiniGuard Cam,DFO,74,74,yes
-2,59,BlueLume,,,,
-3,8,Leaf blower,,,72,no
-4,56,Rocket Chef,,,,
-5,54,TheraICE,GU,,,
-6,24,Solana vest,AB,,70,no
-7,15,Anything Speaker,GU,,,
-8,10,FluffCo pillow,DFO,56,56,yes
-9,7,Tibo board,,,52,no
-10,16,Prepared Hero,DFO,53,53,yes
-11,38,Tenikle,GU,,,
-12,17,ClickFree,GU,,,
-13,27,Skyhawk drone,AB,,105,no
-14,57,Cap Crack,,,,
-15,73,AURA Bluetooth Sleep Mask,,,,
-16,11,Synoshi,DFO,55,55,yes
-17,5,Kitsch,GU,,,
-18,97,clause keepsakes,,,,
-19,21,Aurabi ball,DFO,48,48,yes
-20,51,Mini saw,,,,
-21,89,Projector Go,,,,
-22,58,Story Brew,,,,
-23,90,Spin Aero,,,,
-24,81,Solana Thermo Gloves,,,,
-25,99,stained glass,,,,
-26,12,Aerless,GU,,,
-27,6 (gutters),Gutters / HomeBuddy,,,,
-28,45,Duck vac,,,35,no
-29,46,Grounded Footwear,,,40,no
-30,100,rodent stake,,,,
-31,35,Campanelli,GU,,,
-32,18,HydroX5,DFO,60,60,yes
-33,82,Memory Pearl,,,,
-34,31,foot massager,,,,
-35,32,Pluxy,GU,,,
-36,75,Wamoma GrillMaster,,,,
-37,43,VERIFY: Nano Wipe,,,,
-38,29,NoBark,,,,
-39,98,clause keepsakes,,,,
-40,96,Print Pocket,,,,
-41,36,Audien,GU,,,
-42,28,Starscope,DFO,62,62,yes
-43,14,iMemories,GU,,,
-44,77,Happy Birdy Smart Bird Feeder,,,,
-45,47,Herz P1 ring,,,,
-46,22,Hootie,GU,,,
-47,25,Vela Sleep,GU,,,
-48,19,Ryoko Pro,DFO,80,80,yes
-49,26,MixMate,DFO,43,43,yes
-50,42,VERIFY: Flex Focus,,,,
-51,53,Hear Direct,GU,,,
-52,60,RegenRX,,,,
-53,61,SyncWrist,,,,
-54,62,Lawn trimmer,,,,
-55,64,ResQVac,,,,
-56,65,Herz scale,,,,
-57,66,BackRestore,,,,
-58,67,Grounding blanket,,,,
-59,68,Vermix Pulse Pro,,,,
-60,69,CarbonOne Safe,,,,
-61,70,NovaVolt Solar,,,,
-62,71,Walla Boom,,,,
-63,72,Food warming mat,,,,
-64,41,VERIFY: Ozoori,,,,
-65,74,Voyge Card Smart Locator,,,,
-66,76,Herz P1 Vibration Plate,,,,
-67,78,Voyge Disc Smart Tag,,,,
-68,80,Wamoma Vacuum Sealer Pro,,,,
-69,83,Auto Air V2,,,,
-70,84,WallaBuds Fit,,,,
-71,86,RoboPaw,,,,
-72,87,Steer Falcon,,,,
-73,88,Night Spark,,,,
-74,91,Turbo Drive RC,,,,
-75,92,Lite Sketch,,,,
-76,93,Stunt Wave RC,,,,
-77,94,Cosy Goose,,,,
-78,95,Sky Crawler RC,,,,
+page_position,ff_action,product,network,known_payout_usd,dfo_cpa_usd,routed_via_dfo,ff_offer
+1,2,MiniGuard Cam,DFO,74,74,yes,MiniGaurdCam_DFO
+2,59,BlueLume,,,,,adaptive_glasses_AB
+3,8,Power Leaf Blower,,,72,no,leafblower_AB
+4,56,Rocket Chef,,,,,cooker_DFO
+5,54,TheraICE,GU,,,,thera_ice_GU
+6,24,Solana Heated Vest,AB,,70,no,solana_vest_AB
+7,15,Anything Speaker,GU,,,,AnythingSpeaker_GU
+8,10,FluffCo Pillow,DFO,56,56,yes,Fluffco_DFO
+9,7,Tivano board,,,52,no,TiboCutting_GU;tivano_cutting_board_DFO
+10,16,Prepared Hero,DFO,53,53,yes,prepared_hero_DFO
+11,38,Tenikle,GU,,,,tenikle_GU
+12,17,ClickFree,GU,,,,clickfree_memories_GU;omni_stick_GU
+13,27,StealthBird 4K drone,AB,,105,no,stealthbird_AB
+14,57,CapCrack,,,,,cap_crack_AB
+15,73,AURA Sleep Mask,,,,,sleep_mask_aura_AB
+16,11,Synoshi,DFO,55,55,yes,SynoshySpinner_DFO
+17,5,Drive Bright Night Glasses,GU,,,,KitschHair_GU
+18,97,Claus Keepsakes advent,,,,,clease_keeps_AB
+19,21,Aurabi Ball,DFO,48,48,yes,galaxyBall_DFO
+20,51,Mini Saw,,,,,hand_saw_AB
+21,89,Projector Go,,,,,projecto_AB
+22,58,Story Brew,,,,,storybrew_AB
+23,90,Spin Aero,,,,,spinaero_AB
+24,81,Solana Thermo Gloves,,,,,therma_gloves_AB
+25,99,Holly Heirlooms Suncatcher,,,,,suncatcher_AB
+26,12,Aerless,GU,,,,Aerless_GU
+27,6 (gutters),Gutters (HomeBuddy),,,,,Gutters_hb
+28,45,Duck Vacuum,,,35,no,duck_vaccum_DFO
+29,46,Grounded Footwear,,,40,no,grounded_shoes_AB
+30,100,Vermix Stake Pulse,,,,,rodent_stake_AB
+31,35,Campanelli,GU,,,,campanelli_stain_GU
+32,18,HydroX5,DFO,60,60,yes,HydroX5PowerWasher_DFO
+33,82,Memory Pearl,,,,,memory_pearl_AB
+34,31,RevivaFlow foot massager,,,,,foot_massage_AB
+35,32,Pluxy,GU,,,,Pluxy_GU
+36,75,Wamoma GrillMaster,,,,,grill_brush_AB
+37,43,Nano Wipe,,,,,scratch_remover_AB
+38,29,NoBark,,,,,nobark_AB
+39,98,Christmas Memory Bottle,,,,,christmas_memories
+40,96,Print Pocket,,,,,pocket_printer_AB
+41,36,Audien,GU,,,,audien_GU
+42,28,Starscope,DFO,62,62,yes,Starscope_DFO
+43,14,iMemories,GU,,,,imemories_GU
+44,77,Happy Birdy feeder,,,,,smart_bird_feeder_AB
+45,47,Herz P1 Ring,,,,,smart_ring_AB
+46,22,Hootie,GU,,,,Hootie_GU
+47,25,Vela Sleep,GU,,,,VelaSleep_GU
+48,19,Ryoko Pro,DFO,80,80,yes,RyokoPro_DFO
+49,26,MixMate,DFO,43,43,yes,Mixmate_DFO
+50,42,Flex Focus,,,,,Flex_focus_AB
+51,53,Hear Direct,GU,,,,tv_hear_GU
+52,60,RegenRX,,,,,insoles_AB
+53,61,SyncWrist,,,,,smart_watch_AB
+54,62,Wood Ranger Trimmer,,,,,lawn_trimmer_AB
+55,64,ResQVac,,,,,anti_choke_AB
+56,65,Herz P1 Scale,,,,,smart_scale_AB
+57,66,Back Restore,,,,,backrestore_AB
+58,67,BareEarth Blanket,,,,,weighted_blanket_AB
+59,68,Vermix Pulse Pro,,,,,vermex_pulse_AB
+60,69,CarbonOne CO detector,,,,,co2_monitor_AB
+61,70,NovaVolt Zapper,,,,,bug_zapper_AB
+62,71,Walla Boom+,,,,,wallasound_speaker_AB
+63,72,Wamoma Warming Mat,,,,,warming_mat_AB
+64,41,Ozoori,,,,,fridge_deoderiser_DFO
+65,74,Voyge Card,,,,,wallet_tracker_AB
+66,76,Herz P1 Vibration Plate,,,,,vibration_plate_AB
+67,78,Voyge Disc Tag,,,,,smart_tack_AB
+68,80,Wamoma Vacuum Sealer,,,,,vaccum_seal_food_AB
+69,83,Auto Air V2,,,,,auto_air_AB
+70,84,WallaBuds Fit,,,,,earbuds_AB
+71,86,RoboPaw,,,,,robo_paw_AB
+72,87,Steer Falcon,,,,,steer_falcon_AB
+73,88,Night Spark,,,,,night_spark_flashlight_AB
+74,91,Turbo Drive RC,,,,,turbo_driver_AB
+75,92,Lite Sketch,,,,,lite_sketch_AB
+76,93,Stunt Wave RC,,,,,stunt_wave_AB
+77,94,Cosy Goose,,,,,cosy_goose_AB
+78,95,Sky Crawler RC,,,,,sky_crawler_AB

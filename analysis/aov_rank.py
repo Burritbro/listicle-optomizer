@@ -79,10 +79,15 @@ def load_inventory():
     for r in rows:
         r["action_key"] = r["ff_action"].split()[0]
         r["name_key"] = key_name(re.sub(r"^VERIFY:\s*", "", r["product"]))
+        r["ff_offers"] = {o.strip() for o in (r.get("ff_offer") or "").split(";") if o.strip()}
     return rows
 
 
 def match(inv, action, name):
+    # exact FunnelFlux offer name (ff_offer column) wins: that's what ff_pull.py exports
+    for r in inv:
+        if name and name.strip() in r["ff_offers"]:
+            return r
     if action:
         for r in inv:
             if r["action_key"] == action:

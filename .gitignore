@@ -4,3 +4,5 @@
 analysis/ff_offers.csv
 analysis/ff_raw*.json
 analysis/report.md
+analysis/proposed_order.csv
+analysis/lm_reorder_plan.md

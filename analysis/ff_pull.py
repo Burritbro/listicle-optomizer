@@ -10,9 +10,8 @@ Auth: FunnelFlux only accepts a short-lived access token (Authorization: Bearer,
     is needed here.
   - Anywhere else, set FUNNELFLUX_ACCESS_TOKEN. Never commit tokens: this repo is public.
 
-Report: POST /v1/reporting/drilldown/, filtered to the /lm funnel, grouped by
-"Insight: Action Number" then "Element: Offer". The action number is the N in
-path.consumergrabs.com/action/N on the page, so rows join to current_page_inventory.csv.
+Report: POST /v1/reporting/drilldown/, filtered to the /lm funnel, grouped by "Element: Offer".
+Rows join to current_page_inventory.csv through its ff_offer column.
 """
 import argparse
 import csv
@@ -71,10 +70,12 @@ def main():
     body = {
         "timeStart": start.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "timeEnd": end.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "attributes": [{"attribute": "Insight: Action Number"}, {"attribute": "Element: Offer"}],
+        # Group by offer only: "Insight: Action Number" reports cover actions 1-10 only,
+        # and lander + offer can't be combined in one report. An offer's "visits" are
+        # the clicks it received from the listicle(s). Offers are shared by every lander
+        # in this funnel (/lm, msn_listicle_LP, christmas_angle_LP).
+        "attributes": [{"attribute": "Element: Offer"}],
         "filters": [{"attribute": "Element: Funnel", "whitelistFilters": [a.funnel]}],
-        "restrictToMetrics": ["Visits", "Cost", "OfferClicks", "OfferClicksUnique",
-                              "Conversions", "Revenue", "TotalRevenue"],
     }
     rep = post(body)
     if a.raw:
@@ -82,19 +83,13 @@ def main():
 
     out = []
     for attrs, r in flatten(rep.get("rows")):
-        by = {x.get("attribute"): x for x in attrs}
-        act = by.get("Insight: Action Number", {})
-        off = by.get("Element: Offer", {})
+        off = {x.get("attribute"): x for x in attrs}.get("Element: Offer", {})
         out.append({
-            "Action": act.get("value") or act.get("id") or "",
             "Offer": off.get("value") or "",
             "Offer ID": off.get("id") or "",
-            "Visits": r.get("visits", 0),
-            "Offer Clicks": r.get("offerClicks", 0),
-            "Offer Clicks Unique": r.get("offerClicksUnique", 0),
+            "Offer Clicks": r.get("visits", 0),
             "Conversions": r.get("conversions", 0),
             "Revenue": r.get("revenue", "0"),
-            "Total Revenue": r.get("totalRevenue", "0"),
             "Cost": r.get("cost", "0"),
         })
     if not out:
