@@ -1,0 +1,954 @@
+<html class="next-display-ready">
+  <head>
+    <!-- brand fix: replaces any leftover "Wood Ranger" text with WOODRANGER<sup>®</sup> -->
+    <script>(function(){
+  var RX=/\b(Wood[\s ]+Ranger|WOOD[\s ]+RANGER)(s\b)?/g;
+  function fix(node){
+    var t=node.nodeValue;RX.lastIndex=0;
+    if(!RX.test(t))return;RX.lastIndex=0;
+    var frag=document.createDocumentFragment(),last=0,m;
+    while((m=RX.exec(t))){
+      frag.appendChild(document.createTextNode(t.slice(last,m.index)+"WOODRANGER"));
+      var s=document.createElement("sup");s.textContent="®";frag.appendChild(s);
+      if(m[2])frag.appendChild(document.createTextNode("s"));
+      last=m.index+m[0].length;
+    }
+    frag.appendChild(document.createTextNode(t.slice(last)));
+    node.parentNode&&node.parentNode.replaceChild(frag,node);
+  }
+  function walk(root){
+    if(!root)return;
+    if(root.nodeType===3){fix(root);return}
+    if(root.nodeType!==1)return;
+    var tag=root.nodeName;
+    if(tag==="SCRIPT"||tag==="STYLE"||tag==="TEXTAREA")return;
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),nodes=[];
+    while(w.nextNode()){
+      var p=w.currentNode.parentNode&&w.currentNode.parentNode.nodeName;
+      if(p!=="SCRIPT"&&p!=="STYLE"&&p!=="TEXTAREA")nodes.push(w.currentNode);
+    }
+    for(var i=0;i<nodes.length;i++)fix(nodes[i]);
+  }
+  new MutationObserver(function(list){
+    for(var i=0;i<list.length;i++){
+      var mu=list[i];
+      if(mu.type==="characterData"){fix(mu.target);continue}
+      for(var j=0;j<mu.addedNodes.length;j++)walk(mu.addedNodes[j]);
+    }
+  }).observe(document.documentElement,{childList:true,subtree:true,characterData:true});
+  if(document.readyState!=="loading")walk(document.body);
+  else document.addEventListener("DOMContentLoaded",function(){walk(document.body)});
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta property="og:title" content="Power Leaf Blower">
+    <meta property="og:description" content="The mini blower that blows like a beast!">
+    <meta property="og:type" content="website">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <!-- Preload LCP hero image -->
+    <link rel="preload" href="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/hero.webp" as="image"><!-- Critical above-fold CSS (inlined) -->
+    <style>
+      :root {
+        --color-text: #000;
+        --color-red: #c8102e;
+        --color-title: #111111;
+        --color-grey: #444444;
+        --color-blue: #2072dc;
+        --color-green: #2a7d4f;
+        --color-yellow: #ffc107;
+        --color-yellow-light: #fff3cd;
+        --color-white: #ffffff;
+        --color-bg: #f9f7f4;
+        --color-black: #000;
+        --font-title: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+        --font-body: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+        --font-ui: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+        --wrapper-max: 1240px;
+        --wrapper-px: 24px;
+        --sidebar-width: 360px;
+        --gap: 48px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        font-size: 18px;
+        line-height: 1.75;
+        color: var(--color-text);
+        background-color: #fff;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: var(--color-blue);
+        text-decoration: none;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      ul,
+      ol {
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .wrapper {
+        max-width: var(--wrapper-max);
+        padding-inline: var(--wrapper-px);
+        margin-inline: auto;
+        width: 100%;
+      }
+
+      @media (max-width: 640px) {
+        .wrapper {
+          padding-inline: 16px;
+        }
+      }
+
+      .header-accent-bar {
+        display: none;
+      }
+
+      .site-header {
+        position: static;
+        z-index: 50;
+        background-color: #1e1e1e;
+      }
+
+      .header-main {
+        background-color: #1e1e1e;
+        padding: 10px 0;
+      }
+
+      .header-brand-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand-logo {
+        width: 338px;
+        height: auto;
+        display: block;
+      }
+
+      .header-brand-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .brand-name {
+        font-family: var(--font-title);
+        font-size: 30px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-cold {
+        font-weight: 800;
+        color: #fff;
+      }
+
+      .brand-gear {
+        font-weight: 800;
+        color: #c07820;
+      }
+
+      .brand-review {
+        font-weight: 400;
+        color: var(--color-title);
+      }
+
+      .brand-tagline {
+        margin: 0;
+        font-family: var(--font-body);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .header-trending {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-family: var(--font-body);
+        font-size: 15px;
+        color: #fff;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .header-nav {
+        background-color: #1e1e1e;
+        border-bottom: 3px solid #333;
+      }
+
+      .header-nav .wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .header-nav .wrapper::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+        white-space: nowrap;
+        border-top: 1px solid #333;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 10px 20px 10px 0;
+        font-family: var(--font-body);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 21.6px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+      }
+
+      @media (max-width: 640px) {
+        .brand-logo {
+          width: 198px;
+        }
+
+        .header-main {
+          background-color: #1a1a1a;
+          padding: 11px 0;
+        }
+
+        .header-trending {
+          flex-direction: column;
+          align-items: flex-end;
+          font-size: 12px;
+          color: #fff;
+          line-height: 1.4;
+          white-space: normal;
+        }
+
+        .header-trending img {
+          display: none;
+        }
+      }
+
+      .article-section {
+        padding: 21px 0 250px;
+      }
+
+      .article-content {
+        width: 100%;
+      }
+
+      .hero-image-wrapper {
+        position: relative;
+        margin-bottom: 22px;
+      }
+
+      .hero-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+      }
+
+      .hero-video {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+      }
+
+      .article-headline {
+        font-family: var(--font-title);
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: 0;
+        color: var(--color-title);
+        margin-top: 18px;
+        margin-bottom: 20px;
+        max-width: 97%;
+      }
+
+      .headline-highlight {
+        background-color: #fff28c;
+        color: var(--color-title);
+        padding: 0 4px;
+        font-style: normal;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        line-height: 1;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .article-meta-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .article-meta-avatar {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .article-meta-text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: start;
+      }
+
+      .article-meta-text .author-name {
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 400;
+        color: #777;
+        line-height: 1.3;
+      }
+
+      .article-meta-stars {
+        display: block;
+        height: 16px;
+        width: 92px;
+      }
+
+      .article-meta-read {
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 400;
+        color: #777;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .article-meta-right-mob {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        justify-content: center;
+      }
+
+      @media (max-width: 640px) {
+        .article-meta-text .author-name {
+          font-size: 10px;
+          max-width: 175px;
+        }
+
+        .article-meta-stars {
+          height: 14px;
+          width: 78px;
+        }
+
+        .article-meta-read {
+          font-size: 10px;
+          line-height: 1;
+        }
+
+        .article-meta-avatar {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    </style><!-- Page Stylesheet -->
+    <link rel="stylesheet" href="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/leafblower/css/presell-8-new.css">
+    <script>function getDate(days) {
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const now = new Date();
+        now.setDate(now.getDate() + days);
+        function getOrdinalSuffix(day) {
+          if (day >= 11 && day<= 13) return "th";
+          switch (day % 10) {
+            case 1:
+              return "st";
+            case 2:
+              return "nd";
+            case 3:
+              return "rd";
+            default:
+              return "th";
+          }
+        }
+        const d = now.getDate();
+        return `${monthNames[now.getMonth()]} ${d}${getOrdinalSuffix(d)}, ${now.getFullYear()}`;
+      }</script>
+    <!-- FF Pro Page Defaults (must come BEFORE the universal tag) -->
+    <script>var fluxDefaults = { p: "4329eszgYkx2", f: "3vkva49LIKjr" }</script>
+    <!-- FF Pro Universal Tag -->
+    <script>!function(f,l,u,x,j,s,a,b){window.flux||(j="undefined"!=typeof fluxOptions?fluxOptions:{},s="undefined"!=typeof fluxDefaults?fluxDefaults:{},(a=l.createElement("script")).src="https://"+u+"/integration/lumetricv2.min.js?v="+x,a.type="text/javascript",a.async="true",queue=[],window.flux={track:function(){queue.push(arguments)}},a.onload=a.onreadystatechange=function(){var rs=this.readyState;if(!rs||"complete"==rs||"loaded"==rs)try{for(window.flux=new Lumetric(u,x,j,s);0!=queue.length;){var args=queue.pop();window.flux.track.apply(null,args)}}catch(e){}},(b=document.getElementsByTagName("script")[0]).parentNode.insertBefore(a,b))}(window,document,"path.consumergrabs.com","3.3.0");</script>
+    <!-- FF Pro View Event -->
+    <script>flux.track("view")</script>
+  </head>
+  <body>
+    <header id="ibf7" class="site-header"><!-- Thin top accent bar -->
+      <div id="ih2s" class="header-accent-bar">
+        <p id="inhp"> ⚡ <b id="i91v">Limited Stock Alert: 50% off promotion active</b> — orders placed today still guaranteed to ship </p>
+      </div><!-- White main header: brand + trending -->
+      <div id="iuk6i" class="header-main">
+        <div id="iathf" class="wrapper">
+          <div id="i8ifr" class="header-brand-row">
+            <img id="ikoqz" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/container.webp" alt="Logo" class="brand-logo">
+            <div id="izjox" class="header-trending">
+              <img id="iukrb" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/d0ffe8b7413802fdefcd1c6e732fc919d6c287cf.png" alt="USA Flag">
+              <span id="icluk">Trending in the USA | Advertorial</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="ion5d">
+      <section id="article" class="article-section">
+        <div id="ifc6p" class="stock-notice">
+          <div id="ihnsj" class="stock-notice-icon">
+            <span id="ittvn">!</span>
+          </div>
+          <p id="irvct" class="stock-notice-text stock-notice-text--desk">
+            <strong id="iy9kj">Update:</strong> Following increased demand and online coverage, <a id="ij7vp" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="go-to-offer stock-notice-link">WOODRANGER<sup id="ijbe2">®</sup>
+            </a> is running low on inventory at the current 50% promotional price. Orders placed today are still guaranteed to ship, but this offer will not last.
+          </p>
+          <p id="iruqi" class="stock-notice-text stock-notice-text--mob">
+            <strong id="i4nnk">Update:</strong> WOODRANGER<sup id="idgvg">®</sup> Power Leaf Blower™ is selling out fast. Low stock. Express shipping guaranteed.
+          </p>
+        </div>
+        <div id="ivads" class="wrapper">
+          <article id="it4ch" class="article-content">
+            <p id="iz911" class="editor-pick">Home | <b id="i02dk">DIY &amp; Outdoor Gear</b>
+            </p>
+            <h1 id="i1z69" class="article-headline"> 8 Reasons Homeowners Are Finally <span id="igchg" class="headline-highlight">Ditching Their Old Leaf Blowers</span> — And Never Looking Back </h1>
+            <div id="iluwv" class="article-meta article-meta--desk">
+              <div id="inqf4" class="article-meta-left">
+                <img id="ikwif" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/Diane_Patterson.png" alt="Diane Patterson" loading="lazy" class="article-meta-avatar">
+                <div id="ivkdg" class="article-meta-text">
+                  <span id="i0b5a" class="author-name">By Diane Patterson | The Home &amp; Yard Report | Updated: <span id="ifi6w" class="post-date-desk">November 2nd, 2026</span>
+                  </span>
+                  <img id="iojr2" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/Group_1000003190.png" alt="5 stars" class="article-meta-stars">
+                </div>
+              </div>
+              <span id="i4325" class="article-meta-read">3 Min Read</span>
+            </div>
+            <img id="ikhdo" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/hero.webp" alt="WOODRANGER® Power Leaf Blower" fetchpriority="high" class="hero-image-wrapper">
+            <div id="seen-section" class="seen-section">
+              <p id="ia7be" class="seen-title">As Advertised On</p>
+              <img id="idwqt" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/desk.webp" alt="seen" loading="lazy" class="seen-image seen-image--desktop">
+              <img id="iio4k" src="https://cdn.29next.store/media/woodranger/uploads/mob13.webp" alt="seen" loading="lazy" class="seen-image seen-image--mobile">
+            </div>
+            <div id="i9b7g" class="article-meta article-meta--mob">
+              <div id="ikgw2" class="article-meta-left">
+                <img id="iojqg" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/Diane_Patterson.png" alt="Diane Patterson" loading="lazy" class="article-meta-avatar">
+                <div id="ieki7" class="article-meta-text">
+                  <span id="i5yl4" class="author-name">By Diane Patterson | The Home &amp; Yard Report | Updated: <span id="ih5yg" class="post-date">November 2nd, 2026</span>
+                  </span>
+                </div>
+              </div>
+              <div id="izw0h" class="article-meta-right-mob">
+                <img id="ilrwe" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/Group_1000003190.png" alt="5 stars" loading="lazy" class="article-meta-stars">
+                <span id="ii2uj" class="article-meta-read">3 Min Read</span>
+              </div>
+            </div>
+            <div id="ifu1t" class="article-intro">
+              <p id="iw6gy" class="article-intro-p">
+                <b id="iko98">It weighs less than a handbag</b>, runs without gas or cords, and clears a driveway in minutes. Here's why over 27,000 people have made the switch to <a id="i39vt" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="go-to-offer">
+                  <b id="i72dd">WOODRANGER<sup id="i5kal">®</sup>
+                  </b>
+                </a>.
+              </p>
+              <p id="imz05" class="article-intro-p"> Let me be upfront: I was skeptical. A cordless, handheld blower that claims to match the performance of a full-size gas model? It sounded like marketing. But the numbers don't lie —
+                <br id="i6zeq">
+                <b id="idvri">over 27,000 verified buyers</b> and a 4.8-star rating built on real reviews from real homeowners.
+              </p>
+              <p id="i14gyg" class="article-intro-p"> So I tested it. On my patio. On my driveway. In my garage. On the car. And I've been recommending it to everyone I know ever since. Here's exactly why. </p>
+            </div><!-- 8 Reasons Section -->
+            <section id="reasons" class="reasons-section"><!-- Reason 1 -->
+              <div id="iwkyq9" class="reason-row">
+                <div id="i09rpl" class="reason-content">
+                  <div id="ioezof" class="reason-header">
+                    <h3 id="iwsx3s" class="reason-title"> 1. One-Handed Power — No Back Strain </h3>
+                  </div>
+                  <div id="ilxvvo" class="reason-image--mob-copy">
+                    <div id="i02jlr" class="hero-video-wrapper">
+                      <video id="idfnk3" data-gjs-type="html-video" muted="true" loop="true" playsinline="" preload="none" data-src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/WoodRanger-Presell-2026-1.mp4"></video>
+                    </div>
+                  </div>
+                  <div id="ifrwag" class="reason-body-wrap">
+                    <p id="ijvh62" class="reason-body"> Traditional tools are heavy, bulky, and made for long jobs. For quick home cleanups, they’re simply too much. </p>
+                    <p id="i09r6l" class="reason-body"> The <a id="i0swmb" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="go-to-offer">WOODRANGER<sup id="inj83k">®</sup>
+                      </a> is different. </p>
+                    <p id="i4vg7o" class="reason-body"> Lightweight, one-handed, and easy to control — just grab it, point, and go. No cords. No strain. No hassle. </p>
+                    <div id="i2p81v" class="reason-body-2">
+                      <div id="in0eok" class="line"></div>
+                      <span id="i5kdbq"> "Whenever the patio gets dusty, I just grab it and it's spotless in under a minute." That's the experience — quick, easy, done. — Karen M. </span>
+                    </div>
+                  </div>
+                </div>
+                <div id="izpa6g" class="reason-image--desk">
+                  <div id="ibn8c9" class="hero-video-wrapper">
+                    <video id="ip33ku" data-gjs-type="html-video" muted="true" loop="true" playsinline="" preload="none" data-src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/WoodRanger-Presell-2026-1.mp4" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/WoodRanger-Presell-2026-1.mp4"></video>
+                  </div>
+                </div>
+              </div><!-- Reason 2 -->
+              <div id="itdz1y" class="reason-row reason-row--reverse">
+                <div id="iwxmn6" class="reason-content">
+                  <div id="i1mx1h" class="reason-header">
+                    <h3 id="iynfbl" class="reason-title"> 2. No Gas. No Cords. No Setup. Just Charge It And Go. </h3>
+                  </div>
+                  <div id="ikfs1l" class="reason-image--mob-copy">
+                    <img id="i8jfzg" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/456452.webp" alt="WOODRANGER® 24V rechargeable battery — no gas or cords needed" loading="lazy">
+                  </div>
+                  <div id="in36zi" class="reason-body-wrap">
+                    <p id="im0nh1" class="reason-body"> If you’ve used traditional tools, you know the hassle—cords that don’t reach and time wasted before you even begin. </p>
+                    <p id="i4sdgk" class="reason-body"> That’s why more people are switching to simpler, battery-powered tools. <a id="iuveo2" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="go-to-offer">WOODRANGER<sup id="ihbnwj">®</sup>
+                      </a> runs on a 24V rechargeable battery with a responsive speed trigger for easy, controlled use. </p>
+                    <div id="i3u5vm" class="reason-body-2">
+                      <div id="iov78n" class="line"></div>
+                      <span id="iq3lqk"> "I used to drag around an extension cord every time. Now I just pick this up and get the job done." — Steve L. </span>
+                    </div>
+                  </div>
+                </div>
+                <div id="i6tcls" class="reason-image--desk">
+                  <img id="if8ble" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/456452.webp" alt="WOODRANGER® 24V rechargeable battery — no gas or cords needed" loading="lazy">
+                </div>
+              </div><!-- Reason 3 -->
+              <div id="i5gf3n" class="reason-row no-border-mob">
+                <div id="i1bx4z" class="reason-content">
+                  <div id="i80b0f" class="reason-header">
+                    <h3 id="i1aj1b" class="reason-title sticky-start"> 3. Quiet Enough Without Waking the Street </h3>
+                  </div>
+                  <div id="igljm1" class="reason-image--mob-copy">
+                    <img id="iwyxqa" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/frame_1000003149dsa.webp" alt="WOODRANGER® quiet leaf blower — ideal for early morning yard work" loading="lazy">
+                  </div>
+                  <div id="i7pe78" class="reason-body-wrap">
+                    <p id="i36i1q" class="reason-body"> Early mornings are usually when yard work gets done—but traditional tools make it loud and disruptive. </p>
+                    <p id="ib707j" class="reason-body"> That’s why more people are switching to quieter, battery-powered options. <a id="i83eff" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="go-to-offer">
+                        <b id="id70ze">WOODRANGER<sup id="ibhy38">®</sup>
+                        </b>
+                      </a> runs on a 24V rechargeable battery, delivering smooth, controlled power without the noise. </p>
+                    <div id="iqp17q" class="reason-body-2">
+                      <div id="io9sdi" class="line"></div>
+                      <span id="i0d7w7"> "Got this for my dad in his 70s—he loves how light and easy it is. No more back strain, and still powerful." — Sabrina R. </span>
+                    </div>
+                  </div>
+                </div>
+                <div id="ihm9br" class="reason-image--desk">
+                  <img id="ieujbj" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/frame_1000003149dsa.webp" alt="WOODRANGER® quiet leaf blower — ideal for early morning yard work" loading="lazy">
+                </div>
+              </div><!-- Reason 4 -->
+              <div id="i9dayf" class="reason-row reason-row--reverse">
+                <div id="ip6i7b" class="reason-content">
+                  <div id="iyf13l" class="reason-header">
+                    <h3 id="ij082w" class="reason-title"> 4. It Does Things Your Old Blower Never Could </h3>
+                  </div>
+                  <div id="isk1ii" class="reason-image--mob-copy">
+                    <img id="igfsy7" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/3123123.webp" alt="WOODRANGER® versatile indoor and outdoor use" loading="lazy">
+                  </div>
+                  <div id="i8jvt1" class="reason-body-wrap">
+                    <p id="i7uq7b" class="reason-body"> I bought this for yard work—but ended up using it inside even more. The compact size and precision nozzle make it useful for jobs full-size blowers can’t handle. </p>
+                    <div id="ih55rg" class="reason-list">
+                      <ul id="iqkjid">
+                        <li id="ix9lxf" data-gjs-type="list-item">Dust blinds &amp; ceiling fans</li>
+                        <li id="ixfe4m" data-gjs-type="list-item">Clean keyboards &amp; electronics</li>
+                        <li id="iiyamp" data-gjs-type="list-item">Clear gutters &amp; roof edges</li>
+                      </ul>
+                      <ul id="i4ogvr">
+                        <li id="immu93" data-gjs-type="list-item">Dry your car streak-free</li>
+                        <li id="i4ba21" data-gjs-type="list-item">Blow off grass clippings</li>
+                        <li id="itcy52" data-gjs-type="list-item">Clean garage floors</li>
+                      </ul>
+                    </div>
+                    <div id="i0ir3j" class="reason-body-2">
+                      <div id="iw7mq9" class="line"></div>
+                      <span id="i7wycj"> I use it room to room—it’s more than a yard tool.</span>
+                      <br id="il5ewr">
+                      <span id="ig3c5h">— Olivia M. </span>
+                    </div>
+                  </div>
+                </div>
+                <div id="ijpeef" class="reason-image--desk">
+                  <img id="ilxacp" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/3123123.webp" alt="WOODRANGER® versatile indoor and outdoor use" loading="lazy">
+                </div>
+              </div><!-- Reason 5 -->
+              <div id="izhq3i" class="reason-row">
+                <div id="ia8wpa" class="reason-content">
+                  <div id="iec86j" class="reason-header">
+                    <h3 id="ixt1ue" class="reason-title"> 5. Don’t Let the Size Fool You — The Power Is Real </h3>
+                  </div>
+                  <div id="i19mig" class="reason-image--mob-copy">
+                    <div id="ieeris" class="hero-video-wrapper">
+                      <video id="iqa9wj" data-gjs-type="html-video" muted="true" loop="true" playsinline="" preload="none" data-src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/WoodRanger-Presell-2026-2.mp4"></video>
+                    </div>
+                  </div>
+                  <div id="irma9r" class="reason-body-wrap">
+                    <p id="inx96j" class="reason-body"> Most people wonder if something this small can handle real yard work. It can—and then some. </p>
+                    <p id="iissoz" class="reason-body"> Inside is a high-speed motor built to move wet leaves, grass, and debris without slowing down. </p>
+                    <div id="in0d9t" class="reason-body-2">
+                      <div id="igvr3n" class="line"></div>
+                      <span id="if2sei"> "I’ve been detailing cars for years—this replaced multiple tools. Powerful for its size." – Jackson C. </span>
+                    </div>
+                    <div id="ijzjkj" class="reason-note">
+                      <b id="i0fhkr">Tech note:</b>
+                      <span id="imphrg"> 55,000 RPM · 1,600W output · 24V lithium-ion · Smart Dynamic Speed Trigger · Durable ABS housing · Ships from Ohio, USA </span>
+                    </div>
+                  </div>
+                </div>
+                <div id="idjzub" class="reason-image--desk">
+                  <div id="iewjfw" class="hero-video-wrapper">
+                    <video id="ijpzjq" data-gjs-type="html-video" muted="true" loop="true" playsinline="" preload="none" data-src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/WoodRanger-Presell-2026-2.mp4" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/WoodRanger-Presell-2026-2.mp4"></video>
+                  </div>
+                </div>
+              </div><!-- Reason 6 -->
+              <div id="i23ei9" class="reason-row reason-row--reverse margin-bottom2">
+                <div id="ifxihg" class="reason-content">
+                  <div id="ib8p4c" class="reason-header">
+                    <h3 id="izuv3w" class="reason-title"> 6. It Replaces A Machine That Costs 10x More And Takes 10x The Effort </h3>
+                  </div>
+                  <div id="ipd7qb" class="reason-image--mob-copy">
+                    <img id="ibpjdz" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/43245.webp" alt="reason 6" loading="lazy">
+                  </div>
+                  <div id="i6oxdr" class="reason-body-wrap">
+                    <p id="ivb8ty" class="reason-body"> A decent gas leaf blower costs $200–$400. It needs fuel. It needs oil. It needs annual maintenance. It sits in your garage taking up space, and half the time it won't start when you need it. </p>
+                  </div>
+                </div>
+                <div id="ify5qr" class="reason-image--desk">
+                  <img id="icdk3c" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/43245.webp" alt="reason 6" loading="lazy">
+                </div>
+              </div><!-- Reason 7 -->
+              <div id="igsegg" class="reason-row">
+                <div id="i3717h" class="reason-content">
+                  <div id="icher6" class="reason-header">
+                    <h3 id="i129rb" class="reason-title"> 7. It Works Year-Round — Not Just In Fall </h3>
+                  </div>
+                  <div id="icbh2n" class="reason-image--mob-copy">
+                    <img id="iuuolw" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/435345.webp" alt="reason 7" loading="lazy">
+                  </div>
+                  <div id="i09ppa" class="reason-body-wrap">
+                    <p id="ibkcrf" class="reason-body"> Most people think leaf blowers are just for fall, but dust, grass clippings, pollen, and debris happen all year—especially around driveways, patios, and garages. </p>
+                    <p id="icgbc9" class="reason-body">
+                      <a id="iqlna3" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="go-to-offer">
+                        <b id="isx2qd">WOODRANGER<sup id="i9jtuj">®</sup>
+                        </b>
+                      </a> is built for everyday use. Spring pollen, summer clippings, fall leaves, winter garage dust—one tool, all year.
+                    </p>
+                    <div id="ioobyf" class="reason-body-2">
+                      <div id="i7m8nk" class="line"></div>
+                      <span id="i3040z"> "It’s become my go-to for quick cleanups. I grab it like a broom now." – Robert J. </span>
+                    </div>
+                  </div>
+                </div>
+                <div id="iz5xyk" class="reason-image--desk">
+                  <img id="ii2ok3" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/435345.webp" alt="reason 7" loading="lazy">
+                </div>
+              </div><!-- Reason 8 -->
+              <div id="i0e71m" class="reason-row reason-row--reverse margin-bottom">
+                <div id="ik8n6h" class="reason-content">
+                  <div id="ick4pn" class="reason-header">
+                    <h3 id="iwa746" class="reason-title"> 8. At 50% Off, It Pays For Itself The First Time You Use It </h3>
+                  </div>
+                  <div id="idxic3" class="reason-image--mob-copy">
+                    <img id="ignhlb" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/43534.webp" alt="WOODRANGER® Power Leaf Blower — 50% off promotional pricing" loading="lazy">
+                  </div>
+                  <div id="isaps4" class="reason-body-wrap">
+                    <p id="i78uaw" class="reason-body"> Hiring a service can cost $50–$100 per visit—plus gas, time, and hassle with traditional tools. </p>
+                    <p id="i4n0qk" class="reason-body">With <a id="il7pci" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="go-to-offer"> WOODRANGER<sup id="ik6daq">®</sup>
+                      </a>, there’s no fuel, no maintenance, and no ongoing costs. </p>
+                    <p id="if4lgf" class="reason-body"> Use it once and you’ve already saved time, money, and effort. </p>
+                  </div>
+                </div>
+                <div id="inrc9p" class="reason-image--desk">
+                  <img id="ibylae" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/43534.webp" alt="WOODRANGER® Power Leaf Blower — 50% off promotional pricing" loading="lazy">
+                </div>
+              </div>
+            </section><!-- Final Verdict CTA Section -->
+            <section id="verdict" class="verdict-section">
+              <div id="i57rpc" class="verdict-inner">
+                <h2 id="ipsu06" class="verdict-headline sticky-end"> The Simplest Upgrade Your Yard Has Been Waiting For </h2>
+                <p id="irse2g" class="verdict-subtext"> Lightweight. Cordless. Powerful. Quiet. Works indoors and out. 27,517+ happy buyers and a 4.8-star rating don't lie. If you're still fighting a heavy, noisy gas blower — or still sweeping your driveway by hand — this is the upgrade that will make you wonder why you waited. </p>
+                <div id="ilpx8u" class="verdict-update">
+                  <strong id="it4ewj">UPDATE:</strong>
+                  <a id="i4ui2u" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="verdict-update-link go-to-offer">WOODRANGER<sup id="ics68i">®</sup>
+                  </a>
+                  <span id="ikdhvr"> Power Leaf Blower are currently available at a limited-time discount, with </span>
+                  <b id="iz4b7w">savings of 50% off</b>
+                  <span id="isxbpg"> while supplies last. </span>
+                </div>
+                <a id="ipjwa5" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="verdict-cta-btn go-to-offer"> Check Availability &amp; Claim Your Discount </a>
+              </div>
+            </section><!-- Reviews-1 -->
+            <div id="reviews" class="reviews-card">
+              <h2 id="idylhf" class="reviews-card-title"> More Reviews from WOODRANGER<sup id="ij8qxn">®</sup> Power Leaf Blower Owners </h2>
+              <div id="i6pdzb" class="review-item">
+                <img id="isyd9i" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/Group_1000003190.png" alt="5 stars" loading="lazy" class="review-stars-img">
+                <p id="i3yp5j" class="review-title"> Lightweight Power for Quick, Easy Cleanup </p>
+                <p id="icpx6g" class="review-text"> "My go-to after mowing the lawn! I use it right after cutting the grass to blow the clippings off the driveway and walkway. It's light, easy tohandle, and way faster than sweeping." </p>
+                <div id="i2cgwd" class="review-author-row">
+                  <span id="iu1dqv" class="review-author-name">— Mary J.</span>
+                  <span id="i6x9ba" class="review-verified-badge">
+                    <svg id="ixa0es" data-gjs-type="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path id="i1sa0x" data-gjs-type="svg-in" d="M8.50428 0.174541L9.47868 0.828946C9.66958 0.957016 9.89946 1.01793 10.1309 1.00075L11.3081 0.912505C11.7265 0.881268 12.1219 1.10539 12.3032 1.47633L12.8139 2.52121C12.9141 2.7258 13.0827 2.89137 13.2911 2.98977L14.3554 3.49112C14.7341 3.66917 14.9615 4.05728 14.9297 4.46805L14.8398 5.6238C14.8223 5.85027 14.8836 6.07595 15.0148 6.26415L15.6814 7.22079C15.9184 7.56126 15.9184 8.00874 15.6814 8.34921L15.0148 9.30585C14.8844 9.49327 14.8223 9.71896 14.8398 9.9462L14.9297 11.102C14.9615 11.5127 14.7333 11.9008 14.3554 12.0789L13.2911 12.5802C13.0827 12.6786 12.9141 12.8442 12.8139 13.0488L12.3032 14.0937C12.1219 14.4654 11.7265 14.6887 11.3081 14.6575L10.1309 14.5693C9.90025 14.5521 9.67038 14.6122 9.47868 14.7411L8.50428 15.3955C8.15748 15.6282 7.70169 15.6282 7.3549 15.3955L6.38049 14.7411C6.18959 14.613 5.95971 14.5521 5.72825 14.5693L4.55103 14.6575C4.13263 14.6887 3.73731 14.4646 3.55596 14.0937L3.0453 13.0488C2.94507 12.8442 2.77645 12.6786 2.56803 12.5802L1.50375 12.0789C1.12512 11.9008 0.897625 11.5127 0.929452 11.102L1.01934 9.9462C1.03684 9.71973 0.975588 9.49405 0.844341 9.30585L0.177783 8.34921C-0.0592611 8.00874 -0.0592611 7.56126 0.177783 7.22079L0.844341 6.26415C0.97479 6.07673 1.03683 5.85104 1.01934 5.6238L0.929452 4.46805C0.897635 4.05728 1.12592 3.66916 1.50375 3.49112L2.56803 2.98977C2.77643 2.89137 2.94507 2.72582 3.0453 2.52121L3.55596 1.47633C3.73731 1.1046 4.13263 0.881258 4.55103 0.912505L5.72825 1.00075C5.95892 1.01793 6.1888 0.957799 6.38049 0.828946L7.3549 0.174541C7.70169 -0.0581805 8.15748 -0.0581805 8.50428 0.174541ZM6.7623 10.6373L11.853 5.63944C12.0519 5.44421 12.0519 5.12794 11.853 4.9327C11.6542 4.73747 11.332 4.73747 11.1331 4.9327L6.40204 9.57754L4.72527 7.93135C4.52642 7.73612 4.20427 7.73612 4.00541 7.93135C3.80655 8.12658 3.80655 8.44286 4.00541 8.6381L6.04169 10.6373C6.14112 10.7349 6.27157 10.7841 6.40122 10.7841C6.53167 10.7841 6.66211 10.7357 6.76075 10.6373L6.7623 10.6373Z" fill="#3AB890"></path>
+                    </svg> Verified Buyer
+                  </span>
+                </div>
+              </div>
+              <div id="i3k6qd" class="review-item">
+                <img id="i4e62v" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/Group_1000003190.png" alt="5 stars" loading="lazy" class="review-stars-img">
+                <p id="iz2v94" class="review-title">Easy to Use, Surprisingly Strong</p>
+                <p id="ipwhj5" class="review-text"> "I'm not very strong, but it's light enough that I can handle it with no problem. I was amazed at how much air it pushes for something so small." </p>
+                <div id="i8t32l" class="review-author-row">
+                  <span id="ipe7kx" class="review-author-name">— Linda M.</span>
+                  <span id="iyya7o" class="review-verified-badge">
+                    <svg id="i4avl1" data-gjs-type="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path id="i2qf8s" data-gjs-type="svg-in" d="M8.50428 0.174541L9.47868 0.828946C9.66958 0.957016 9.89946 1.01793 10.1309 1.00075L11.3081 0.912505C11.7265 0.881268 12.1219 1.10539 12.3032 1.47633L12.8139 2.52121C12.9141 2.7258 13.0827 2.89137 13.2911 2.98977L14.3554 3.49112C14.7341 3.66917 14.9615 4.05728 14.9297 4.46805L14.8398 5.6238C14.8223 5.85027 14.8836 6.07595 15.0148 6.26415L15.6814 7.22079C15.9184 7.56126 15.9184 8.00874 15.6814 8.34921L15.0148 9.30585C14.8844 9.49327 14.8223 9.71896 14.8398 9.9462L14.9297 11.102C14.9615 11.5127 14.7333 11.9008 14.3554 12.0789L13.2911 12.5802C13.0827 12.6786 12.9141 12.8442 12.8139 13.0488L12.3032 14.0937C12.1219 14.4654 11.7265 14.6887 11.3081 14.6575L10.1309 14.5693C9.90025 14.5521 9.67038 14.6122 9.47868 14.7411L8.50428 15.3955C8.15748 15.6282 7.70169 15.6282 7.3549 15.3955L6.38049 14.7411C6.18959 14.613 5.95971 14.5521 5.72825 14.5693L4.55103 14.6575C4.13263 14.6887 3.73731 14.4646 3.55596 14.0937L3.0453 13.0488C2.94507 12.8442 2.77645 12.6786 2.56803 12.5802L1.50375 12.0789C1.12512 11.9008 0.897625 11.5127 0.929452 11.102L1.01934 9.9462C1.03684 9.71973 0.975588 9.49405 0.844341 9.30585L0.177783 8.34921C-0.0592611 8.00874 -0.0592611 7.56126 0.177783 7.22079L0.844341 6.26415C0.97479 6.07673 1.03683 5.85104 1.01934 5.6238L0.929452 4.46805C0.897635 4.05728 1.12592 3.66916 1.50375 3.49112L2.56803 2.98977C2.77643 2.89137 2.94507 2.72582 3.0453 2.52121L3.55596 1.47633C3.73731 1.1046 4.13263 0.881258 4.55103 0.912505L5.72825 1.00075C5.95892 1.01793 6.1888 0.957799 6.38049 0.828946L7.3549 0.174541C7.70169 -0.0581805 8.15748 -0.0581805 8.50428 0.174541ZM6.7623 10.6373L11.853 5.63944C12.0519 5.44421 12.0519 5.12794 11.853 4.9327C11.6542 4.73747 11.332 4.73747 11.1331 4.9327L6.40204 9.57754L4.72527 7.93135C4.52642 7.73612 4.20427 7.73612 4.00541 7.93135C3.80655 8.12658 3.80655 8.44286 4.00541 8.6381L6.04169 10.6373C6.14112 10.7349 6.27157 10.7841 6.40122 10.7841C6.53167 10.7841 6.66211 10.7357 6.76075 10.6373L6.7623 10.6373Z" fill="#3AB890"></path>
+                    </svg> Verified Buyer
+                  </span>
+                </div>
+              </div>
+              <div id="i00xcm" class="review-item">
+                <img id="ik1o3f" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/Group_1000003190.png" alt="5 stars" loading="lazy" class="review-stars-img">
+                <p id="ivcx3g" class="review-title">Compact Power That Works Anywhere</p>
+                <p id="i84wba" class="review-text"> "Didn't expect something this compact to have so much airflow. It even works great in my garage — I use it to blow dust and debris off my workbench before any project." </p>
+                <div id="in493h" class="review-author-row">
+                  <span id="inaj7c" class="review-author-name">— Patricia L.</span>
+                  <span id="iqy92q" class="review-verified-badge">
+                    <svg id="iczwlt" data-gjs-type="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path id="ii1rig" data-gjs-type="svg-in" d="M8.50428 0.174541L9.47868 0.828946C9.66958 0.957016 9.89946 1.01793 10.1309 1.00075L11.3081 0.912505C11.7265 0.881268 12.1219 1.10539 12.3032 1.47633L12.8139 2.52121C12.9141 2.7258 13.0827 2.89137 13.2911 2.98977L14.3554 3.49112C14.7341 3.66917 14.9615 4.05728 14.9297 4.46805L14.8398 5.6238C14.8223 5.85027 14.8836 6.07595 15.0148 6.26415L15.6814 7.22079C15.9184 7.56126 15.9184 8.00874 15.6814 8.34921L15.0148 9.30585C14.8844 9.49327 14.8223 9.71896 14.8398 9.9462L14.9297 11.102C14.9615 11.5127 14.7333 11.9008 14.3554 12.0789L13.2911 12.5802C13.0827 12.6786 12.9141 12.8442 12.8139 13.0488L12.3032 14.0937C12.1219 14.4654 11.7265 14.6887 11.3081 14.6575L10.1309 14.5693C9.90025 14.5521 9.67038 14.6122 9.47868 14.7411L8.50428 15.3955C8.15748 15.6282 7.70169 15.6282 7.3549 15.3955L6.38049 14.7411C6.18959 14.613 5.95971 14.5521 5.72825 14.5693L4.55103 14.6575C4.13263 14.6887 3.73731 14.4646 3.55596 14.0937L3.0453 13.0488C2.94507 12.8442 2.77645 12.6786 2.56803 12.5802L1.50375 12.0789C1.12512 11.9008 0.897625 11.5127 0.929452 11.102L1.01934 9.9462C1.03684 9.71973 0.975588 9.49405 0.844341 9.30585L0.177783 8.34921C-0.0592611 8.00874 -0.0592611 7.56126 0.177783 7.22079L0.844341 6.26415C0.97479 6.07673 1.03683 5.85104 1.01934 5.6238L0.929452 4.46805C0.897635 4.05728 1.12592 3.66916 1.50375 3.49112L2.56803 2.98977C2.77643 2.89137 2.94507 2.72582 3.0453 2.52121L3.55596 1.47633C3.73731 1.1046 4.13263 0.881258 4.55103 0.912505L5.72825 1.00075C5.95892 1.01793 6.1888 0.957799 6.38049 0.828946L7.3549 0.174541C7.70169 -0.0581805 8.15748 -0.0581805 8.50428 0.174541ZM6.7623 10.6373L11.853 5.63944C12.0519 5.44421 12.0519 5.12794 11.853 4.9327C11.6542 4.73747 11.332 4.73747 11.1331 4.9327L6.40204 9.57754L4.72527 7.93135C4.52642 7.73612 4.20427 7.73612 4.00541 7.93135C3.80655 8.12658 3.80655 8.44286 4.00541 8.6381L6.04169 10.6373C6.14112 10.7349 6.27157 10.7841 6.40122 10.7841C6.53167 10.7841 6.66211 10.7357 6.76075 10.6373L6.7623 10.6373Z" fill="#3AB890"></path>
+                    </svg> Verified Buyer
+                  </span>
+                </div>
+              </div>
+              <a id="ivu9ns" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="reviews-cta-btn go-to-offer"> Check Availability &amp; Claim Your Discount </a>
+            </div>
+          </article>
+          <aside id="il0scl" class="article-sidebar">
+            <img id="iwnpmh" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/213123.webp" alt="WOODRANGER® Power Leaf Blower" loading="lazy" class="sidebar-product-img">
+            <div id="iwlywk" class="sidebar-body">
+              <img id="ild6zb" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/woodranger/uploads/Group_1000003190.png" alt="4.8 stars" loading="lazy" class="sidebar-stars">
+              <p id="iq0ajz" class="sidebar-rating-text">4.8 out of 5 - Rated Excellent</p>
+              <p id="igblgh" class="sidebar-review-count">Based on 27,517+ Customers</p>
+              <a id="i368nj" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="sidebar-cta-btn go-to-offer"> Check Availability </a>
+              <ul id="inxcjj" class="sidebar-features">
+                <li id="ilhie2" data-gjs-type="list-item">
+                  <svg id="ipndim" data-gjs-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path id="itrodj" data-gjs-type="svg-in" d="M12.9766 2.18887C10.0085 -0.729623 5.1949 -0.729623 2.22612 2.18887C-0.742042 5.10691 -0.742042 9.84056 2.22612 12.7586C5.1949 15.6769 10.0085 15.6769 12.9766 12.7586C15.9456 9.84042 15.9456 5.10691 12.9766 2.18887ZM5.9794 11.1612L2.79762 7.60282L3.9394 6.61578L6.0507 8.97701L11.3307 3.78594L12.4056 4.84293L5.9794 11.1612Z" fill="#338C0C"></path>
+                  </svg> Powerful Airflow Performance
+                </li>
+                <li id="i0obzf" data-gjs-type="list-item">
+                  <svg id="iu2ufn" data-gjs-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path id="i4mywi" data-gjs-type="svg-in" d="M12.9766 2.18887C10.0085 -0.729623 5.1949 -0.729623 2.22612 2.18887C-0.742042 5.10691 -0.742042 9.84056 2.22612 12.7586C5.1949 15.6769 10.0085 15.6769 12.9766 12.7586C15.9456 9.84042 15.9456 5.10691 12.9766 2.18887ZM5.9794 11.1612L2.79762 7.60282L3.9394 6.61578L6.0507 8.97701L11.3307 3.78594L12.4056 4.84293L5.9794 11.1612Z" fill="#338C0C"></path>
+                  </svg> Durable Long-Lasting Build
+                </li>
+                <li id="i28agg" data-gjs-type="list-item">
+                  <svg id="ievqef" data-gjs-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path id="id8ygj" data-gjs-type="svg-in" d="M12.9766 2.18887C10.0085 -0.729623 5.1949 -0.729623 2.22612 2.18887C-0.742042 5.10691 -0.742042 9.84056 2.22612 12.7586C5.1949 15.6769 10.0085 15.6769 12.9766 12.7586C15.9456 9.84042 15.9456 5.10691 12.9766 2.18887ZM5.9794 11.1612L2.79762 7.60282L3.9394 6.61578L6.0507 8.97701L11.3307 3.78594L12.4056 4.84293L5.9794 11.1612Z" fill="#338C0C"></path>
+                  </svg> Great Overall Value
+                </li>
+                <li id="imqcig" data-gjs-type="list-item">
+                  <svg id="iai187" data-gjs-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path id="izx4lg" data-gjs-type="svg-in" d="M12.9766 2.18887C10.0085 -0.729623 5.1949 -0.729623 2.22612 2.18887C-0.742042 5.10691 -0.742042 9.84056 2.22612 12.7586C5.1949 15.6769 10.0085 15.6769 12.9766 12.7586C15.9456 9.84042 15.9456 5.10691 12.9766 2.18887ZM5.9794 11.1612L2.79762 7.60282L3.9394 6.61578L6.0507 8.97701L11.3307 3.78594L12.4056 4.84293L5.9794 11.1612Z" fill="#338C0C"></path>
+                  </svg> Easy One-Hand Use
+                </li>
+                <li id="irkngk" data-gjs-type="list-item">
+                  <svg id="ig56i7" data-gjs-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path id="i3o3jh" data-gjs-type="svg-in" d="M12.9766 2.18887C10.0085 -0.729623 5.1949 -0.729623 2.22612 2.18887C-0.742042 5.10691 -0.742042 9.84056 2.22612 12.7586C5.1949 15.6769 10.0085 15.6769 12.9766 12.7586C15.9456 9.84042 15.9456 5.10691 12.9766 2.18887ZM5.9794 11.1612L2.79762 7.60282L3.9394 6.61578L6.0507 8.97701L11.3307 3.78594L12.4056 4.84293L5.9794 11.1612Z" fill="#338C0C"></path>
+                  </svg> Long Battery Life
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main><!-- Sticky CTA (mobile + desktop) -->
+    <div id="iwijps" class="sticky-cta-section">
+      <a id="i3z31j" href="https://path.consumergrabs.com/action/3vkva49LIKjr/4329ofoH1PMA/8" class="sticky-cta-btn go-to-offer">Check Discount &amp; Availability</a>
+    </div>
+    <footer id="iu55ro" class="site-footer">
+      <div id="i6aneo" class="wrapper">
+        <p id="ihvlue" class="footer-copyright">Copyright ©<span id="copy-year">2026</span> WOODRANGER<sup id="ix780o">®</sup>
+        </p>
+        <p id="if3fx4" class="footer-legal">
+          <a id="iim5n2" href="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/index.html" target="_blank">Terms Of Use</a> · <a id="i3j80c" href="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/index.html" target="_blank">Privacy Policy</a>
+        </p>
+        <p id="iaaufg" class="text-footer"> THIS IS AN ADVERTISEMENT AND NOT AN ACTUAL NEWS ARTICLE, BLOG, OR CONSUMER PROTECTION UPDATE
+          <br id="iqlivk">THE STORY DEPICTED ON THIS SITE AND THE PERSON DEPICTED IN THE STORY ARE NOT ACTUAL NEWS. RATHER, THIS STORY IS BASED ON THE RESULTS THAT SOME PEOPLE WHO HAVE USED THESE PRODUCTS HAVE ACHIEVED. THE RESULTS PORTRAYED IN THE STORY AND IN THE COMMENTS ARE ILLUSTRATIVE, AND MAY NOT BE THE RESULTS THAT YOU ACHIEVE WITH THESE PRODUCTS. THIS PAGE COULD RECEIVE COMPENSATION FOR CLICKS ON OR PURCHASE OF PRODUCTS FEATURED ON THIS SITE.
+        </p>
+        <div id="ide41b" class="footer-dmca">
+          <img id="iglwft" src="https://static.ll-assets.com/variants/unpublished/4521aee2fff7f516a26104a504431a76/cdn.29next.store/media/odin/uploads/qwe.webp" alt="DMCA Protected" loading="lazy">
+        </div>
+      </div>
+    </footer>
+    <script id="itu1an">
+      document
+        .querySelectorAll(".post-date, .post-date-desk")
+        .forEach(function (el) {
+          el.innerText = getDate(-2);
+        });
+      var _cy = document.getElementById("copy-year");
+      if (_cy) _cy.textContent = new Date().getFullYear();
+    </script><!-- Sticky CTA visibility -->
+    <script id="inn0vj">
+      (function () {
+        var sticky = document.querySelector(".sticky-cta-section");
+        var start = document.querySelector(".sticky-start");
+        var end = document.querySelector(".sticky-end");
+        if (!sticky || !start || !end) return;
+
+        var startPassed = false;
+        var endReached = false;
+
+        function update() {
+          if (startPassed && !endReached) {
+            sticky.classList.add("is-visible");
+          } else {
+            sticky.classList.remove("is-visible");
+          }
+        }
+
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            startPassed =
+              !entry.isIntersecting && entry.boundingClientRect.top < 0;
+            update();
+          });
+        }).observe(start);
+
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            endReached =
+              entry.isIntersecting || entry.boundingClientRect.top < 0;
+            update();
+          });
+        }).observe(end);
+      })();
+    </script><!-- Video manager: lazy load + viewport play/pause -->
+    <script id="ia31gj">
+      (function () {
+        var videos = document.querySelectorAll("video");
+        if (!videos.length) return;
+
+        videos.forEach(function (v) {
+          v.removeAttribute("autoplay");
+        });
+
+        function tryPlay(video) {
+          var p = video.play();
+          if (p !== undefined) p.catch(function () {});
+        }
+
+        if (!("IntersectionObserver" in window)) {
+          videos.forEach(function (v) {
+            if (v.dataset.src) {
+              v.src = v.dataset.src;
+              v.load();
+            }
+            tryPlay(v);
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              var video = entry.target;
+              if (entry.isIntersecting) {
+                if (video.dataset.src && !video.src) {
+                  video.src = video.dataset.src;
+                  video.load();
+                  video.addEventListener(
+                    "canplay",
+                    function () {
+                      tryPlay(video);
+                    },
+                    { once: true },
+                  );
+                } else {
+                  tryPlay(video);
+                }
+              } else {
+                video.pause();
+              }
+            });
+          },
+          { rootMargin: "200px 0px" },
+        );
+
+        videos.forEach(function (v) {
+          observer.observe(v);
+        });
+      })();
+    </script>
+    <script id="ixa103">
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get("reviews") === "n") {
+          var el = document.getElementById("reviews");
+          if (el) el.style.display = "none";
+        }
+        if (params.get("banner") === "n") {
+          var banner = document.querySelector(".header-accent-bar");
+          if (banner) banner.style.display = "none";
+        }
+        if (params.get("seen") === "n") {
+          var seen = document.getElementById("seen-section");
+          if (seen) seen.style.display = "none";
+        }
+      })();
+    </script>
+  </body>
+</html>
