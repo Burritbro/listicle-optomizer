@@ -63,7 +63,13 @@ s, k = re.subn(r'(<img id="ij0hh" loading="lazy" src=")%s' % re.escape(idx), r'\
 s, k = re.subn(r'(<img id="ih84xi" loading="lazy" src=")%s(" alt=")' % re.escape(idx), r'\g<1>' + IMG + r'image%2025.png\g<2>DMCA Protected', s); assert k == 1
 s, k = re.subn(r'poster="/powerblower/app/desktop/images/', 'poster="' + IMG, s); assert k == 5, k
 
-s, k = re.subn(re.escape(B) + r'/video\.woodrangertools\.com/', 'https://video.woodrangertools.com/', s); assert k == 4, k   # LanderLab copies are truncated (no moov atom)
+if 'blower-last-vid.mp4' in s:
+    # Videos re-uploaded to LanderLab (set as the <video src>). Drop the stale <source> tags that point at the
+    # truncated import copies (no moov atom) so nothing falls back to them; encode the space in "blower-presell (1).mp4".
+    s, k = re.subn(r'\s*<source id="\w+" src="' + re.escape(B) + r'/video\.woodrangertools\.com/[^"]+"[^>]*>', '', s); assert k == 4, k
+    s = s.replace('blower-presell (1).mp4', 'blower-presell%20(1).mp4')
+else:
+    s, k = re.subn(re.escape(B) + r'/video\.woodrangertools\.com/', 'https://video.woodrangertools.com/', s); assert k == 4, k   # LanderLab copies are truncated (no moov atom)
 assert 'index.html' not in re.sub(r'<!--.*?-->', '', s, flags=re.S), 'index.html left'
 assert 'EF.' not in s and 'googletagmanager' not in re.sub(r'<!--.*?-->', '', s, flags=re.S)
 open(OUT, 'w').write(s)
